@@ -489,3 +489,67 @@
 # import shutil
 
 # shutil.copyfile('test.txt','copy.txt') #two arguments must be there  src and dst
+
+# MOVING FILES =============================
+
+# import os
+
+# source='test.txt'
+# destination=r'C:\Users\Dell\Desktop\test.text'
+
+# try:
+#     if os.path.exists(destination):
+#         print('There is already a file there')
+#     else:
+#         os.replace(source,destination)
+#         print(source+' was moved')
+# except FileNotFoundError:
+#     print(source+' was not found')
+
+# source='fder'
+# destination=r'C:\Users\Dell\Desktop\der'
+
+# try:
+#     if os.path.exists(destination):
+#         print('There is already a file for the same name there')
+#     else:
+#         os.replace(source,destination)
+#         print(source+' was moved')
+# except FileNotFoundError:
+#     print(source+' was not found')
+
+# DELETE FILES ============================
+
+# import os
+# import shutil
+
+# path='empty'
+# try:
+#     # os.remove(path)  file
+#     # os.rmdir(path)    directory
+#     shutil.rmtree(path)  #directory with files
+#     print('removed')
+# except FileNotFoundError:
+#     print('that file was not found')
+# except PermissionError:
+#     print('you don have the permission')
+# else:
+#     print(path+' was deleted')
+
+# MODULES IN PYTHON  ========================
+
+# import messages as msg
+
+# msg.hello()
+# msg.bye()
+
+# from messages import hello,bye
+
+# hello()
+# bye()
+
+# from messages import *       not recomended
+
+# hello()
+
+# help('modules')
