@@ -553,3 +553,49 @@
 # hello()
 
 # help('modules')
+
+# ROCK PAPER SCISSORS GAME=====================
+import random
+
+while True:
+ choices=['rock','paper','scissors']
+ computer=random.choice(choices)
+ player=None
+
+ while player not in choices:
+  player=input('what is your choice rock,paper or scissors?:').lower()
+
+ def display():
+   print('computer:',computer)
+   print('player:',player)
+  
+ if player==computer:
+   display()
+   print('Tie')
+ elif player=='rock':
+  if computer=='paper':
+    display()
+    print('Lose')
+  if computer=='scissors':
+    display()
+    print('Win')
+ elif player=='scissors':
+  if computer=='rock':
+    display()
+    print('Lose')
+  if computer=='paper':
+    display()
+    print('Win')
+ elif player=='paper':
+  if computer=='scissors':
+    display()
+    print('Lose')
+  if computer=='rock':
+    display()
+    print('Win')
+
+ playe_again=input('Play again? (yes/no):').lower()
+ if playe_again!='yes':
+  break
+
+print('Bye')
