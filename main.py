@@ -603,77 +603,81 @@
 
 # QUIZE GAME =================
 
-def new_game():
-    guesses=[]
-    correct_guesses=0
-    question_num=1
+# def new_game():
+#     guesses=[]
+#     correct_guesses=0
+#     question_num=1
 
-    for key in questions:
-        print('---------------------')
-        print(key)
-        for i in options[question_num-1]:
-            print(i)
-        guess=input('Enter(A,B,C,D):')
-        guess=guess.upper()
-        guesses.append(guess)
-        correct_guesses +=check_answer(questions.get(key),guess)
-        question_num+=1
+#     for key in questions:
+#         print('---------------------')
+#         print(key)
+#         for i in options[question_num-1]:
+#             print(i)
+#         guess=input('Enter(A,B,C,D):')
+#         guess=guess.upper()
+#         guesses.append(guess)
+#         correct_guesses +=check_answer(questions.get(key),guess)
+#         question_num+=1
 
-    display_score(correct_guesses,guesses)   
+#     display_score(correct_guesses,guesses)   
 
-#=================
-def check_answer(answer,guess):
+# #=================
+# def check_answer(answer,guess):
     
-    if answer==guess:
-        print('correct')
-        return 1
-    else:
-        print('wrong')
-        return 0
+#     if answer==guess:
+#         print('correct')
+#         return 1
+#     else:
+#         print('wrong')
+#         return 0
     
-#==================
-def display_score(correct_guesses,guesses):
-    print('----------------------')
-    print('Result')
-    print('---------------------')
-    print('Answers: ', end=' ')
-    for i in questions:
-        print(questions.get(i),end=' ')
-    print()
+# #==================
+# def display_score(correct_guesses,guesses):
+#     print('----------------------')
+#     print('Result')
+#     print('---------------------')
+#     print('Answers: ', end=' ')
+#     for i in questions:
+#         print(questions.get(i),end=' ')
+#     print()
 
-    print('Guesses: ', end=' ')
-    for i in guesses:
-        print(i,end=' ')
-    print()
+#     print('Guesses: ', end=' ')
+#     for i in guesses:
+#         print(i,end=' ')
+#     print()
 
-    score=int((correct_guesses/len(questions))*100)
-    print('Your score: '+str(score)+'%')
+#     score=int((correct_guesses/len(questions))*100)
+#     print('Your score: '+str(score)+'%')
 
-#=====================
-def play_again():
-    response=input('Do you want to play again? (yes or no): ')
-    response=response.upper()
+# #=====================
+# def play_again():
+#     response=input('Do you want to play again? (yes or no): ')
+#     response=response.upper()
 
-    if response=='YES':
-        return True
-    else:
-        return False
+#     if response=='YES':
+#         return True
+#     else:
+#         return False
 
-questions={
-    'who created Python?: ':'A',
-    'what year was Python created?: ':'B',
-    'Phtyon is tributed to which comedy group?: ':'C',
-    'is the Earth round?: ':'A'
-}
-options=[
-    ['A.Guido','B.Elon','C.Bill','D.Mark'],
-    ['A.1989','B.2000','C.2021','D.18'],
-    ['A.Lonely','B.smosh','C.Monty','D.SNL'],
-    ['A.True','B.False','C.sometimes','D.what is earth']]
+# questions={
+#     'who created Python?: ':'A',
+#     'what year was Python created?: ':'B',
+#     'Phtyon is tributed to which comedy group?: ':'C',
+#     'is the Earth round?: ':'A'
+# }
+# options=[
+#     ['A.Guido','B.Elon','C.Bill','D.Mark'],
+#     ['A.1989','B.2000','C.2021','D.18'],
+#     ['A.Lonely','B.smosh','C.Monty','D.SNL'],
+#     ['A.True','B.False','C.sometimes','D.what is earth']]
 
-new_game()
+# new_game()
 
-while play_again():
-    new_game()
+# while play_again():
+#     new_game()
 
-print('Bye')
+# print('Bye')
+
+
+# OBJECT ORIENTED PROGRAMMING ====================
+
