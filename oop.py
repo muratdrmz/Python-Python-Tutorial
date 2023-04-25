@@ -301,3 +301,119 @@
 
 
 # ASSINGING A FUNCTION TO A VARIABLE ============================
+
+# def hello():
+#     print('Hello')
+
+# print(hello)
+# hi=hello
+
+# print(hi)
+
+# hello()
+# hi()
+
+# say=print
+# say('this wors')
+
+
+# HIGER ORDER FUNCTIONS  =========================================
+   #function that accepts a function as an argument or returns a function
+    #in python functions are also treated as objects
+
+# def loud(text):
+#     return text.upper()
+
+# def quiet(text):
+#     return text.lower()
+
+#   #these functions accept strings as an ARGUMENT. accept functions as an ARGUMENT
+
+# def hello(func):
+#     text=func('Hello')
+#     print(text)
+
+# hello(quiet)
+
+# def divisor(x):
+#     def dividend(y):
+#         return y/x
+#     return dividend
+
+# divide=divisor(2)
+# print(divide(10))
+
+
+# LAMBDA FUNCTIONS ======================================================
+
+#accepts any number of arguments one expression
+
+# lambda parameters:expression
+
+# def double(x):
+#     return x*2
+
+# print(double(5))
+
+# double=lambda x:x*2
+# print(double(5))
+
+# multiply=lambda x,y:x*y
+# add=lambda x,y,z:x+y+z
+# print(add(4,5,6))
+# print(multiply(2,4))
+
+# full_name=lambda first_name,last_name:first_name+' '+last_name
+# print(full_name('MURAT','DURMAZ'))
+
+# age_check=lambda age:True if age>=18 else False
+# print(age_check(182))
+
+
+# SORT ============== 
+#method  used with lists   function used iterables
+# [BUNA LIST DIYORLAR]    (BUNA TUPLE)
+
+# students=['Squidward','Sandy','Patrick','Spongebob','Mr. Krabs']
+
+# students.sort(reverse=True)
+
+# for i in students:
+#     print(i)
+
+# students=('Squidward','Sandy','Patrick','Spongebob','Mr. Krabs')
+
+# sorted_students=sorted(students,reverse=True)
+
+# for i in sorted_students:
+#     print(i)
+
+# students=[('Squidward', 'F',60),
+#           ('Sandy','A',33),
+#           ('Patrick', 'D',36),
+#           ('Spongebob','B',20),
+#           ('Mr. Krabs', 'C', 78)]
+
+# students.sort()
+# for i in students:
+#     print(i)
+
+# grade=lambda grade:grade[2]
+# students.sort(key=grade,reverse=True)
+# for i in students:
+#     print(i)
+
+
+# students=(('Squidward', 'F',60),
+#           ('Sandy','A',33),
+#           ('Patrick', 'D',36),
+#           ('Spongebob','B',20),
+#           ('Mr. Krabs', 'C', 78))
+
+# age=lambda ages:ages[2]
+# sorted_students=sorted(students,key=age)
+# for i in sorted_students:
+#     print(i)
+
+
+# MAP ===========================================
