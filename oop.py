@@ -417,3 +417,151 @@
 
 
 # MAP ===========================================
+# map() applies a function to each item in an iterable(list tuple...)
+# map(function,iterable)
+
+# store=[('shirt',20.00),
+#        ('pants',25.00),
+#        ('jacket',50.00),
+#        ('socks',10.00)]
+
+# to_euros=lambda data:(data[0],data[1]*0.82)
+# to_dollars=lambda data:(data[0],data[1]/0.82)
+
+# store_dollars=list(map(to_dollars,store))
+
+# store_euros=list(map(to_euros,store))
+
+# for i in store_euros:
+#     print(i)
+
+# for i in store_dollars:
+#     print(i)
+
+
+#FILTER function ===============================================
+#filter() creates a collection of elements from an iterable for which a function returns
+
+#filter(function,iterable)
+
+# friends=[('Rachel',19),
+#          ('Monica',18),
+#          ('Phoebe',17),
+#          ('Joey',16),
+#          ('Chandler',21),
+#          ('Ross',20)]
+
+# age= lambda data:data[1]>=18
+
+# drinking_buds=list(filter(age,friends))
+# print(drinking_buds)
+
+# for i in drinking_buds:
+#     print(i)
+
+
+#REDUCE FUNCTION ==================================================
+# reduce() applys a function to an iterable and reduce it to a single cumulative value. Performs function on first two elements and repeats process until 1 value remains
+
+#reduce(function,iterable)
+
+# import functools
+# # letters=['H','E','L','L','O']
+
+# # fun=lambda x,y:x+y
+# # word=functools.reduce(fun,letters)
+
+# # print(word)
+
+# factorial=[5,4,3,2,1]
+
+# fac=lambda x,y:x*y
+
+# result=functools.reduce(fac,factorial)
+# print(result)
+
+
+# LIST COMPREHENSION ===============================================
+      #creates a new list with less syntax, can mimic lambda functions
+      #list=[expression for item in iterable]
+      #list=[expression for item in iterable if conditional]
+      #list=[expression if/else for item in iterable]
+
+# squares=[]
+# for i in range(1,11):
+#     squares.append(i*i)
+# print(squares)
+
+# squares=[i*i for i in range(1,11)]
+
+# print(squares)
+
+# students=[100,90,80,70,60,50,40,30,0]
+# # passed_students=list(filter(lambda x:x >=60, students))
+# # print(passed_students)
+
+# passed_students=[i for i in students if i>=60]
+# passed_students=[i if i>=60 else 'FAILED'for i in students]
+# print(passed_students)
+
+
+# Dictionary comprehension =========================================
+   # create dictionaries using an expression = can replace for loops and certain lambda functions
+   #dictionary={key:expression for (key,value) in iterable}
+   #dictionary={key:expression for (key,value) in iterable if conditional}
+   #dictionary={key:(if/else) for (key,value) in iterable if conditional}
+   #dictionary={key: function(value) for (key,value) in iterable if conditional}
+
+# cities_in_F={'New york':32,'Boston':75,'Los Angeles':100,'Chicago':50}
+
+# cities_in_C={key:round((value-32)*(5/9)) for (key,value) in cities_in_F.items()}
+
+# print(cities_in_C)
+
+# weather={'New york':'snowing','Boston':'sunny','Los Angeles':'sunny','Chicago':'cloudy'}
+
+# sunny_weather={key: value for (key,value) in weather.items() if value=='sunny'}
+# print(sunny_weather)
+
+# cities={'New york':32,'Boston':75,'Los Angeles':100,'Chicago':50}
+# des_cities={key:('WARM' if value>=40 else 'COLD' ) for (key,value) in cities.items()}
+# print(des_cities)
+
+# cities={'New york':32,'Boston':75,'Los Angeles':100,'Chicago':50}
+
+# def check_temp(value):
+#     if value>=70:
+#         return 'HOT'
+#     elif 69>=value>=40:
+#         return 'WARM'
+#     else:
+#         return 'Cold'
+    
+# des_cities={key:check_temp(value) for (key,value) in cities.items()}
+# print(des_cities)
+
+
+#ZIP (*ITERABLES) =============================================   
+   #aggregate elements from two or more iterables (list,tuples,sets...,) creates a zip object with paired elements stored in tuples for each element
+
+usernames=['Dude','Bro','Mister']
+passwords=('p@ssword','abc123','guest')
+login_date=['1/1/2021','1/2/2021','1/3/2021']
+
+# users=list(zip(usernames,passwords))
+# for i in users:
+   #  print(i)
+# users=dict(zip(usernames,passwords))
+
+# for key,value in users.items():
+#     print(key+' : '+value)
+
+# print(type(users))
+
+# users=zip(usernames,passwords,login_date)
+
+# for i in users:
+#     print(i)
+
+
+# 
