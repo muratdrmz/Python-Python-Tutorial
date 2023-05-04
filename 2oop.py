@@ -544,9 +544,9 @@
 #ZIP (*ITERABLES) =============================================   
    #aggregate elements from two or more iterables (list,tuples,sets...,) creates a zip object with paired elements stored in tuples for each element
 
-usernames=['Dude','Bro','Mister']
-passwords=('p@ssword','abc123','guest')
-login_date=['1/1/2021','1/2/2021','1/3/2021']
+# usernames=['Dude','Bro','Mister']
+# passwords=('p@ssword','abc123','guest')
+# login_date=['1/1/2021','1/2/2021','1/3/2021']
 
 # users=list(zip(usernames,passwords))
 # for i in users:
@@ -564,4 +564,216 @@ login_date=['1/1/2021','1/2/2021','1/3/2021']
 #     print(i)
 
 
-# 
+# if __name__== '__main__'========================================
+  #     main()
+
+
+# if __name__=='__main__':
+#     print('running directly')
+# else:
+#     print('indiretlyh')
+
+# IMPORT TIME ====================================================
+   
+# import time
+# print(time.ctime(0))  #epoch=time began reference point as seconds
+
+# print(time.ctime(10000000000))
+
+# print(time.time())  #return current seconds since epoch
+
+# print(time.ctime(time.time()))
+
+# time_object=time.localtime()
+# time_object=time.gmtime()
+# print(time_object)
+# local_time=time.strftime('%B %d %Y %H:%M:%S',time_object)
+# print(local_time)
+
+# time_string='20 April, 2020'
+# time_object=time.strptime(time_string,'%d %B, %Y')
+# print(time_object)
+
+# time_tuple=(2020,4,20,4,20,0,0,0,0)
+# time_string=time.asctime(time_tuple)
+# print(time_string)
+
+# time_tuple=(2020,4,20,4,20,0,0,0,0)
+# time_string=time.mktime(time_tuple)
+# print(time_string)
+
+
+#MULTITHREADING===================================================
+   #thread=a flow of execution. like a separate order of instructions. GIL global interpreter lock allows only one thread to hold the control of the Python interpreter
+
+   #cpu bound= program/task spends most of it's time waiting for internal events use multiprocessing
+   #io bound=waiting for external events use multithreading
+# import threading
+# import time
+
+# def eat_breakfast():
+#     time.sleep(3)
+#     print('eat breakfast')
+
+# def drink_coffee():
+#     time.sleep(4)
+#     print('drank coffee')
+
+# def study():
+#     time.sleep(5)
+#     print('finish studying')
+    
+# # 1
+# x=threading.Thread(target=eat_breakfast,args=())
+# x.start()
+
+# y=threading.Thread(target=drink_coffee,args=())
+# y.start()
+
+# z=threading.Thread(target=study,args=())
+# z.start()
+
+# x.join()
+# y.join()
+# z.join()
+
+# 2
+# eat_breakfast()
+# drink_coffee()
+# study()
+
+
+# print(threading.active_count())
+# print(threading.enumerate())
+# print(time.perf_counter())
+
+
+# DAEMON THREAD===================================================
+   #a thread that runs in the background,not important for program to run. program will not wait for daemon threads to complete before extitin non-deamon threads cannot be normally killed, stay alive until task is complete 
+# import threading
+# import time
+
+# def timer():
+#     print()
+#     print()
+#     count = 0
+#     while True:
+#         time.sleep(1)
+#         count += 1
+#         print('logged in for: ', count, 'seconds')
+
+# x=threading.Thread(target=timer, daemon=True)
+# x.start()
+
+
+# answer=input('Do you wish to exit?',)
+
+
+# MULTIPROCESSING ================================================
+   #running tasks in prallel on diffferent cpu cores, bypasses GIL / mulitprocessing better for cpu bound tasks heavy cpu usage. multithreading better for bound tasks waiting around
+
+# from multiprocessing import Process, cpu_count
+# import time
+# print(cpu_count())
+
+# def counter(num):
+#     count=0
+#     while count<num:
+#         count +=1
+
+# def main():
+    
+#     a=Process(target=counter, args=(500000,))
+#     b=Process(target=counter, args=(500000,))
+#     c=Process(target=counter, args=(500000,))
+#     d=Process(target=counter, args=(500000,))
+#     a.start()
+#     b.start()
+#     c.start()
+#     d.start()
+    
+#     a.join()
+#     b.join()
+#     c.join()
+#     d.join()
+
+#     print('Finished in:', time.perf_counter(),'seconds')
+
+# if __name__== '__main__':
+#     main()
+
+
+# GRAPHICAL USER INTERFACE GUI====================================
+
+# from tkinter import *
+#    # widgets= GUI elements: buttons textboxes labels images
+#    #windows= serves as a container to hold or contain these widgets
+
+# window=Tk() # instantiate an instance of a window
+
+# window.geometry('420x420')
+# window.title('Bro Code first GUI program')
+# icon=PhotoImage(file='fire.png')
+# window.iconphoto(True,icon)
+# window.config(background='blue')
+
+# window.mainloop()  #place window on computer screen listen for events
+
+
+# LABELS =====================================================
+# from tkinter import *
+
+# window=Tk()
+# window.geometry('420x420')
+# window.title('Bro Code first GUI program')
+# icon=PhotoImage(file='fire.png')
+# window.iconphoto(True,icon)
+# window.config(background='white')
+# photo=PhotoImage(file='fire.png')
+
+# label=Label(window,
+#             text='hello world do you even code',
+#             font=('Arial',40,'bold'),
+#             fg='green',
+#             bg='black',
+#             relief=RAISED,
+#             bd=10,
+#             padx=20,
+#             pady=20,
+#             image=photo,
+#             compound='bottom')
+# label.pack()
+# # label.place(x=100,y=100)
+# window.mainloop()
+
+
+# BUTTONS ========================================================
+# from tkinter import *
+
+# count=0
+# def click():
+#     global count
+#     count+=1
+#     print('you clicked',count,'times')
+#    #  print('you clicked')
+
+# window=Tk()
+
+# photo=PhotoImage(file='fire.png')
+# button=Button(window,
+#               text='click me',
+#               command=click,
+#               font=('Comic Sans',30),
+#               fg='#00FF00',
+#               bg='black',
+#               activeforeground='pink',
+#               activebackground='blue',
+#               state=ACTIVE,
+#               image=photo,
+#               compound='bottom')
+# button.pack()
+# window.mainloop()
+
+
+# ENTRY BOX ====================================================
+
